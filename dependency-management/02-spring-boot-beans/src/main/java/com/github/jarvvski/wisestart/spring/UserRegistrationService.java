@@ -11,7 +11,7 @@ public class UserRegistrationService {
     private final ApplicationContext applicationContext;
 
     public void registerNewUser(UserRegistrationCommand userRegistrationCommand) {
-        // TODO: get an instance of UserRepository manually!
-        // userRepository.createUser(userRegistrationCommand.username());
+        this.applicationContext.getBean(UserRepository.class)
+            .createUser(userRegistrationCommand.username());
     }
 }
